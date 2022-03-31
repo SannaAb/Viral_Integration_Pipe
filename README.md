@@ -14,7 +14,7 @@ Unique for nanopore is that we dont include any quality filtering of the reads. 
 ### How to run 
 
 
-The reads are mapped using the ```runMinimap2.sh```` script
+The reads are mapped using the ```runMinimap2.sh``` script
 
 
 ```
@@ -23,7 +23,7 @@ qsub runMinimap2.sh sample1.fastq
 
 ```
 
-The viral integrations are extracted using ```ScreeningFusionsForNanoPore_Pipeline_vs4.py````
+The viral integrations are extracted using ```ScreeningFusionsForNanoPore_Pipeline_vs4.py```
 
 (the genome is the actual viral genome, if you mapped to another viral genome just make sure you include it in the reference hg19 and change the -g for the new viral genome)
 
@@ -44,7 +44,7 @@ python BinAndAnnotateVirusSEpipelien_10bin.py sample1.OutSE_FusionPipe.txt HBV_D
 
 ```
 
-Finally we remove the PCR contaminations by looking at fusions in the same bins shared across the barcodes. If it is we save the one that is most common 
+Finally we remove the PCR contaminations by looking at fusions in the same bins shared across the barcodes. This is done with the script ```FilterViralOutForPCRSpilling_2.py``` If it is we save the one that is most common.
 
 ```
 

@@ -36,7 +36,7 @@ def extractChimerasINGenomeOfInterest(bam,genome):
     samf=pysam.AlignmentFile(bam, "rb")
     chimeradict={}
     ReadsacrossGenomeOfInterest=samf.fetch(genome)
-    outfile=bam.split(".bam")[0] + ".OutNanoPoreFusionPipe.txt"
+    outfile=bam.split(".bam")[0] + ".OutSE_FusionPipe.txt"
     for read in ReadsacrossGenomeOfInterest:
         if read.has_tag("SA"):
             if 5 in read.cigartuples[0]:
