@@ -21,7 +21,7 @@ module load samtools/1.9
 
 echo "
 
-python /jumbo/WorkingDir/B21-005/Code/NanoPore_pipeline/ScreeningFusionsForNanoPore_Pipeline_vs4.py -b $1 -g HBV_D
+python /jumbo/WorkingDir/B21-005/Code/NanoPore_pipeline/ScreeningFusionsForSE_Pipeline_vs4.py -b $1 -g HBV_D
 
 "
 
