@@ -21,11 +21,12 @@ module load samtools/1.9
 
 echo "
 
-python /jumbo/WorkingDir/B21-005/Code/NanoPore_pipeline/ScreeningFusionsForSE_Pipeline_vs4.py -b $1 -g HBV_D
+python /jumbo/WorkingDir/B21-005/Code/VirusIntegrationPipeline/NanoPore_pipeline/ScreeningFusionsForSE_Pipeline_vs4.py -b $1 -g HBV_D
 
 "
 
-python /jumbo/WorkingDir/B21-005/Code/NanoPore_pipeline/ScreeningFusionsForNanoPore_Pipeline_vs4.py -b $1 -g HBV_D
+
+python /jumbo/WorkingDir/B21-005/Code/VirusIntegrationPipeline/NanoPore_pipeline/ScreeningFusionsForSE_Pipeline_vs4.py -b $1 -g HBV_D
 
 
 echo "
@@ -36,6 +37,6 @@ samtools view $1 -h | grep -e $'\tSA:' -e ^@ | grep -e HBV_D -e ^@ | samtools vi
 
 samtools view $1 -h | grep -e $'\tSA:' -e ^@ | grep -e HBV_D -e ^@ | samtools view -Sb - > ${1%.bam}_Chimeric.bam
 
-
+samtools index ${1%.bam}_Chimeric.bam
 
 echo "Fin"
